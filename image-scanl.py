@@ -24,6 +24,7 @@ def convert_pdf_to_png():
 
 access = True
 tmp = sys.argv[2]
+print (tmp)
 
 if (tmp[len(tmp)-4:]) == ".pdf":
     access = False
