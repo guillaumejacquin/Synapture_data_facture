@@ -84,11 +84,12 @@ def get_all_data(source, text, file_given, elements):
 
 ############################################################################ DATE ##############################################################
     factureDate = get_facture_date(elements)
-    # print(factureDate)
+
+    if (factureDate == ''):
+        factureDate = get_facture_if_date_is_digit(elements)
 ############################################################################ DATE ##############################################################
 ############################################################################ NUMERO FACTURE ##############################################################
     numberFacture = get_number_facture(elements)
-    # print(numberFacture)
 
 ############################################################################ FACTURE  MAX obvious ##############################################################
     arrayTotalMontant2_convert = []
@@ -97,6 +98,7 @@ def get_all_data(source, text, file_given, elements):
 
     source = give_source_name(file_given)
     array_montant_societe = check_price(source, arrayTotalMontant2, file_given)
+
 
     
     for i in range(len(elements)):
@@ -113,24 +115,45 @@ def get_all_data(source, text, file_given, elements):
 
 
         montantTotal = max(arrayTotalMontant2_convert)
-        # print (montantTotal)
-
 
 ############################################################################ FACTURE  MAX obvious ##############################################################
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
 
-
+        montantTotal = max(arrayTotalMontant2_convert)
+        
         tva_probable = []
         tva = 0
         tva_probable = all_results_tva(tva_probable, montantTotal)
         montantHt = 0
         compteur = 0
 
+        array_final = []
+
+        array_tva = []
+
         montantHt,compteur = get_compteur(arrayTotalMontant2_convert, tva_probable, montantHt)
         tva = get_tva(montantHt, compteur, tva)
 
-        # print(montantHt)
-        # print(tva)
+        if (tva == 0):                      #TENTATIVE SI IL ARRIVE JUSTE A RECUPERER LE MONTANT MAX
+            for i in elements:
+                i = i.replace(",", ".") 
+                try:
+                    float(i)
+                    if (not i.isnumeric()):
+                        array_final.append(float(i))
+
+                except Exception:
+                    pass
+            
+            
+            # tva_probable = all_results_tva(tva_probable, montantTotal)
+            array_final = list(dict.fromkeys(array_final))
+
+            array_final.sort()
+            possible_tva = array_final[-2]
+            array_tva = [round(possible_tva -0.01, 2), round(possible_tva, 2), round(possible_tva +0.01, 2)]
+            montantHt, tva = get_tva_complicated(montantTotal, array_tva)
+
 
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
 #SI Il n'y a pas de signes distinctifs comme "500 $" on prend le plus grand nombre a virugle (sinon risque que le code postal passe avant)
@@ -153,6 +176,7 @@ def get_all_data(source, text, file_given, elements):
 ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
         montantHt, tva = get_tva_complicated(montantTotal, array_number)
+
 
     return final_results(factureDate, numberFacture, montantTotal, tva, montantHt)
 
