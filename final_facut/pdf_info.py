@@ -150,7 +150,6 @@ def get_all_data(source, text, file_given, elements):
 
         if (tva == 0):                      #TENTATIVE SI IL ARRIVE JUSTE A RECUPERER LE MONTANT MAX
             for i in elements:
-                i = i.replace(",", ".") 
                 try:
                     float(i)
                     if (not i.isnumeric()):
@@ -175,8 +174,6 @@ def get_all_data(source, text, file_given, elements):
         array_number = []
 
         for i in elements:
-            i = i.replace(",", ".") 
-
             try:
                 float(i)
                 if (not i.isnumeric()):

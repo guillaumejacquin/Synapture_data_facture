@@ -94,7 +94,7 @@ def FirstTabNumeroFacture(elem, test):
     last_array = []
 
     if len(elem) > 6:
-        if ((elem[2] == "/" and elem[5] == "/") or (elem[2] == "." and elem[5] == ".")):
+        if ((elem[2] == "/" and elem[5] == "/") or (elem[2] == "." and elem[5] == ".")or (elem[2] == "-" and elem[5] == "-")):
             return()
 
 
