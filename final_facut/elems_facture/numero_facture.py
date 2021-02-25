@@ -79,7 +79,8 @@ def get_number_facture(elements):
                 if (len(elem) - compteurint < 3) or (elem[0] == 'n' and elem[1] == '°' and len(elem) > 6):
                     last_array.append(elem)
 
-
+    if (len(last_array) == 0):
+        return('')
     if (len(last_array[0]) < 4):
         result = last_array[0] + arrayResultNumeroFacture[1]
     else:
