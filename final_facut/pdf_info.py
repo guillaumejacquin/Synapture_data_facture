@@ -117,9 +117,8 @@ def get_all_data(source, text, file_given, elements):
     
     for i in range(len(elements)):
         arrayTotalMOntant2 = GetObviousELementsTotalFacture(elements, i, arrayTotalMontant2)
-
     arrayTotalMontant2_convert = convert_symbols(arrayTotalMontant2, arrayTotalMontant2_convert)
-
+    
 
     try:
         range_array_obviouse_elem = len(arrayTotalMontant2_convert)
@@ -127,14 +126,13 @@ def get_all_data(source, text, file_given, elements):
         arrayTotalMontant2_convert = str_to_float_montant_total(i, range_array_obviouse_elem, arrayTotalMontant2_convert)
         arrayTotalMontant2_convert = remove_useless_numbers(arrayTotalMontant2_convert, array_montant_societe)
 
-
+        
         montantTotal = max(arrayTotalMontant2_convert)
 
 ############################################################################ FACTURE  MAX obvious ##############################################################
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
-        montantTotal = max(arrayTotalMontant2_convert)
-        print(montantTotal)
-        
+        if (montantTotal == 0):
+            montantTotal = float(arrayTotalMontant2_convert) #je casse le try
         tva_probable = []
         tva = 0
         tva_probable = all_results_tva(tva_probable, montantTotal)
@@ -142,7 +140,6 @@ def get_all_data(source, text, file_given, elements):
         compteur = 0
 
         array_final = []
-
         array_tva = []
 
         montantHt,compteur = get_compteur(arrayTotalMontant2_convert, tva_probable, montantHt)
@@ -159,7 +156,7 @@ def get_all_data(source, text, file_given, elements):
                     pass
             
 
-            # tva_probable = all_results_tva(tva_probable, montantTotal)
+            tva_probable = all_results_tva(tva_probable, montantTotal)
             array_final = list(dict.fromkeys(array_final))
 
             array_final.sort()
@@ -172,20 +169,30 @@ def get_all_data(source, text, file_given, elements):
     except Exception:
         print("Pas evident a retrouver")
         array_number = []
-
+        compteur = 0
         for i in elements:
             try:
                 float(i)
                 if (not i.isnumeric()):
-                    array_number.append(float(i))
+                    if (float(elements[compteur]) < 99_999_999):
+                        array_number.append(float(i))
+
             except Exception:
                 pass
-
-        # montantTotal = max(array_number)
+            compteur += 1
         
+
+        montantTotal = max(array_number)
+        try:
+           if (float(array_montant_societe[0]) == montantTotal):
+                array_number.remove(max(array_number))
+                montantTotal = max(array_number)
+        except Exception:
+            montantTotal = max(array_number)
+        print(array_montant_societe)        
 ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
-        # montantHt, tva = get_tva_complicated(montantTotal, array_number)
+        montantHt, tva = get_tva_complicated(montantTotal, array_number)
 
 
     return final_results(factureDate, numberFacture, montantTotal, tva, montantHt)

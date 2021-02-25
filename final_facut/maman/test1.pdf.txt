@@ -1,69 +1,116 @@
-sarl blue smile
-52. rue de la chaussée d'antin
-75009 paris | france
-+ 33 (0)1_55_28_35_55
-christophe@agencebluesmile.com
+bp rives de paris
+titulaire du compte/account holder
+sas sashiko-ya
 
-pret
-mme cuminet valérie
-106-108 rue la boétie
-75008 paris
+107 b rue marcadet
+75018 paris
 
-paris. le 09 février 2021
-page 1/1
+ce relevé est destiné à être remis. sur leur demande. à vos créanciers ou débiteurs
+appelés à faire inscrire des opérations à votre compte (virements. paiements de
+quittances. etc.).
+son utilisation vous garantit le bon enregistrement des opérations en cause et vous
+évite ainsi des réclamations pour erreurs ou retards d'imputation.
+this statement is intended for your payees and/or payors when setting up direct debit.
+standing orders. transfers and payment. please use this bank account statement when
+booking transactions. it will help avoiding execution errors which might result in
+unnecessary delays.
 
-facture n° 0115620
-honoraires 2021
-référence devis n°bs2021024 du 09/02/2021
-détails
+relevé d'identité bancaire / bank details statement
+iban (international bank account number)
+fr76_1020_7001_3523_2140_0848_658
+code banque
+10207
 
-pu ht
+code guichet
+00135
 
-gestion des réseaux sociaux février
+bic (bank identification code)
+ccbpfrppmtg
+n° du compte
+23214008486
 
-tva
+clé rib
+58
 
-total ht
+domiciliation/paying bank
+bprives ordener
 
-6_000.00
+------------------------------------------------------------------------------------------------------------
 
-6_000.00
+bp rives de paris
+titulaire du compte/account holder
+sas sashiko-ya
 
-20.00%
+107 b rue marcadet
+75018 paris
 
-total ht
+ce relevé est destiné à être remis. sur leur demande. à vos créanciers ou débiteurs
+appelés à faire inscrire des opérations à votre compte (virements. paiements de
+quittances. etc.).
+son utilisation vous garantit le bon enregistrement des opérations en cause et vous
+évite ainsi des réclamations pour erreurs ou retards d'imputation.
+this statement is intended for your payees and/or payors when setting up direct debit.
+standing orders. transfers and payment. please use this bank account statement when
+booking transactions. it will help avoiding execution errors which might result in
+unnecessary delays.
 
-6_000.00 €
+relevé d'identité bancaire / bank details statement
+iban (international bank account number)
+fr76_1020_7001_3523_2140_0848_658
+code banque
+10207
 
-6_000.00
+code guichet
+00135
 
-total tva
+bic (bank identification code)
+ccbpfrppmtg
+n° du compte
+23214008486
 
-1_200.00 €
+clé rib
+58
 
-cumul tva 1_200.00
+domiciliation/paying bank
+bprives ordener
 
-total ttc
+------------------------------------------------------------------------------------------------------------
 
-7_200.00 €
+bp rives de paris
+titulaire du compte/account holder
+sas sashiko-ya
 
-base ht
+107 b rue marcadet
+75018 paris
 
-en cas de retard de paiement. seront exigibles. conformément à
-l'article l 441-6 du code de commerce. une indemnité calculée sur
-la base de trois fois le taux de l'intérêt légal en vigueur ainsi qu'une
-indemnité forfaitaire pour frais de recouvrement de 40€.
-coordonnées bancaires :
-rib 10107_00238_0051_6024488_50 | iban fr76_1010_7002_3800
-5160_2448_850 | code bic bredfrppxxx
+ce relevé est destiné à être remis. sur leur demande. à vos créanciers ou débiteurs
+appelés à faire inscrire des opérations à votre compte (virements. paiements de
+quittances. etc.).
+son utilisation vous garantit le bon enregistrement des opérations en cause et vous
+évite ainsi des réclamations pour erreurs ou retards d'imputation.
+this statement is intended for your payees and/or payors when setting up direct debit.
+standing orders. transfers and payment. please use this bank account statement when
+booking transactions. it will help avoiding execution errors which might result in
+unnecessary delays.
 
-powered by tcpdf (www.tcpdf.org)
+relevé d'identité bancaire / bank details statement
+iban (international bank account number)
+fr76_1020_7001_3523_2140_0848_658
+code banque
+10207
 
-à réception de la facture par virement
+code guichet
+00135
 
-52 rue de la chaussée d’antin 75009 paris | +33 (0)1_55_28_35_55 | contact@agencebluesmile.com
-5498 sarl unipersonnelle | siret 502_242_662_00042 | n°tva intracommunautaire: fr32502242662
+bic (bank identification code)
+ccbpfrppmtg
+n° du compte
+23214008486
 
-agencebluesmile.com
+clé rib
+58
+
+domiciliation/paying bank
+bprives ordener
 
 
