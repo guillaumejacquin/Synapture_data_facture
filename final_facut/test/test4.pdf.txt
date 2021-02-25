@@ -3,7 +3,7 @@
 france
 
 facture
-1278-300619
+1112-280619
 
 n°
 
@@ -17,14 +17,14 @@ e-mail : toa@moa.fr
 rcs paris b 441217395
 
 date
-30/06/2019
+28/06/2019
 
 n° tva intracommunautaire : fr91_441_217_395
 
-palais des congres
+palis des congres
 2 place porte maillot
 
-75017
+75_017
 
 paris
 
@@ -38,32 +38,12 @@ quantité
 
 p.u.
 
-1
-1
-1
-1
-1
-1
-1
-
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-
 prix net
 
-pack informatique 2019
-juin
-juillet
-août
-septembre
-octobre
-novembre
-décembre
+refacturation mobilier arcueil
+commande picots
+
+81.00 €
 
 total quantite
 date
@@ -76,26 +56,17 @@ en votre aimable reglement
 règlement
 prelevement
 
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-50.00 €
-
-7
 montant ht
 
-350.00 €
+81.00 €
 
 montant tva 20 %
 total ttc
 acompte versé
 net a payer €uros
 
-70.00 €
-420.00 €
-420.00 €
+16.20 €
+97.20 €
+97.20 €
 
 

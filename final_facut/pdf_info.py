@@ -44,6 +44,20 @@ def create_txt_pdf(raw, file_given):
     file_txt = file_given + ".txt"
     f = open(file_txt, "w")
     txt = output.lower()
+
+
+    txt = list(txt)
+    for i in range(len(txt)):
+        if (txt[i].isdigit() and txt[i+1] == ' 'and txt[i+2].isdigit()):
+            txt[i+1] = '_'
+
+        if (txt[i] == ','):
+            txt[i] = '.'
+
+
+    txt = "".join(txt)
+ 
+
     f.write(txt)
     f.close()
 
@@ -118,8 +132,8 @@ def get_all_data(source, text, file_given, elements):
 
 ############################################################################ FACTURE  MAX obvious ##############################################################
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
-
         montantTotal = max(arrayTotalMontant2_convert)
+        print(montantTotal)
         
         tva_probable = []
         tva = 0
@@ -145,7 +159,7 @@ def get_all_data(source, text, file_given, elements):
                 except Exception:
                     pass
             
-            
+
             # tva_probable = all_results_tva(tva_probable, montantTotal)
             array_final = list(dict.fromkeys(array_final))
 
@@ -153,7 +167,6 @@ def get_all_data(source, text, file_given, elements):
             possible_tva = array_final[-2]
             array_tva = [round(possible_tva -0.01, 2), round(possible_tva, 2), round(possible_tva +0.01, 2)]
             montantHt, tva = get_tva_complicated(montantTotal, array_tva)
-
 
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
 #SI Il n'y a pas de signes distinctifs comme "500 $" on prend le plus grand nombre a virugle (sinon risque que le code postal passe avant)
@@ -170,12 +183,12 @@ def get_all_data(source, text, file_given, elements):
                     array_number.append(float(i))
             except Exception:
                 pass
-        
-        montantTotal = max(array_number)
+
+        # montantTotal = max(array_number)
         
 ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
-        montantHt, tva = get_tva_complicated(montantTotal, array_number)
+        # montantHt, tva = get_tva_complicated(montantTotal, array_number)
 
 
     return final_results(factureDate, numberFacture, montantTotal, tva, montantHt)
