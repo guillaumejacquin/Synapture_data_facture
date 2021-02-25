@@ -1,0 +1,138 @@
+only one planet
+2 rue bouilloux-lafont
+75015 paris
+bonjour@oopla.fr
+https://www.oopla.fr/
+
+facture
+facture nº
+date
+échéance
+conditions
+
+r2581
+04/01/2021
+04/01/2021
+payable dès
+réception
+
+adresse de facturation
+blue'smile
+52 rue de la chaussée d’antin
+75009 paris
+france
+
+date
+
+description
+
+qté
+
+tva
+
+prix
+unitaire
+
+montant
+
+04/01/2021
+
+lot 10 perles
+céramique
+
+300
+
+20%
+
+3.90
+
+1_170.00
+
+04/01/2021
+
+impression fiche
+personnalisée
+
+300
+
+20%
+
+0.15
+
+45.00
+
+04/01/2021
+
+ajout fiche sur sachet
+
+300
+
+20%
+
+0.15
+
+45.00
+
+04/01/2021
+
+coûts fixes esat pour
+opération ajout fiche
+
+1
+
+20%
+
+150.00
+
+150.00
+
+04/01/2021
+
+frais de livraison en 1
+point en france offerts
+
+1
+
+20%
+
+0.00
+
+0.00
+
+total ht
+total tva
+total ttc
+solde à payer
+
+merci de votre confiance et à bientôt !
+
+1_410.00
+282.00
+1_692.00
+
+1_692.00 eur
+
+récapitulatif de tva
+taux
+
+montant de tva
+
+base ht
+
+20 % tva fr
+
+282.00
+
+1_410.00
+
+facture à payer par virement à l'ordre de only one planet sas :
+iban : fr76_1695_8000_0175_4402_1475_136
+code banque : 16958 code guichet : 00001
+n° compte : 75440214751 clé rib : 36
+banque : qonto - olinda paris
+bic : qntofrp1xxx
+
+sas au capital social de 5_000.00 € - n° rcs paris 840499016 - n° siret 84049901600011 - n° de tva : fr05840499016 - facture
+nº r2581 - page 1/1
+
+

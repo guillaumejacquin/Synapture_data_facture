@@ -133,7 +133,8 @@ def get_all_data(source, text, file_given, elements):
 ############################################################################ FACTURE  MAX obvious ##############################################################
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
         montantTotal = max(arrayTotalMontant2_convert)
-        print(montantTotal)
+        if (montantTotal == 0):
+            montantTotal2.append[montantTotal] #je casse mon try
         
         tva_probable = []
         tva = 0
@@ -150,7 +151,6 @@ def get_all_data(source, text, file_given, elements):
 
         if (tva == 0):                      #TENTATIVE SI IL ARRIVE JUSTE A RECUPERER LE MONTANT MAX
             for i in elements:
-                i = i.replace(",", ".") 
                 try:
                     float(i)
                     if (not i.isnumeric()):
@@ -158,37 +158,69 @@ def get_all_data(source, text, file_given, elements):
 
                 except Exception:
                     pass
+            oscour = []
+            oscour2 = []
+            oscour3 = []
+            
+            for i in range(len(tva_probable)):
+                tva = float (tva_probable[i])
+                tva_max = round(tva + 0.01, 2)
+                tva_min = round(tva - 0.01, 2)
+
+                oscour.append(tva)
+                oscour2.append(tva_max)
+                oscour3.append(tva_min)
             
 
-            # tva_probable = all_results_tva(tva_probable, montantTotal)
-            array_final = list(dict.fromkeys(array_final))
+            compteur, montantHt = get_tva_htc(oscour,compteur, montantHt, tva_probable)
+            tva = get_tva(montantHt, compteur, tva)
 
-            array_final.sort()
-            possible_tva = array_final[-2]
-            array_tva = [round(possible_tva -0.01, 2), round(possible_tva, 2), round(possible_tva +0.01, 2)]
-            montantHt, tva = get_tva_complicated(montantTotal, array_tva)
+            if(tva == "rip"):
+                compteur, montantHt = get_tva_htc(oscour2,compteur, montantHt, tva_probable)
+                tva = get_tva(montantHt, compteur, tva)
+            
+            
+            if(tva == "rip"):
+                compteur, montantHt = get_tva_htc(oscour3,compteur, montantHt, tva_probable)
+                tva = get_tva(montantHt, compteur, tva)
+            
 
 ############################################################################ MONTANT WITHOUT TAXS AND TVA ##############################################################
 #SI Il n'y a pas de signes distinctifs comme "500 $" on prend le plus grand nombre a virugle (sinon risque que le code postal passe avant)
     except Exception:
+ 
+
         print("Pas evident a retrouver")
         array_number = []
+        cmp = 0
 
         for i in elements:
-            i = i.replace(",", ".") 
-
             try:
                 float(i)
                 if (not i.isnumeric()):
-                    array_number.append(float(i))
+                    float_i = float(i)
+                    if (float_i < 100_000_000 ):
+                            array_number.append(float_i)
+                    
             except Exception:
                 pass
+            cmp += 1
 
-        # montantTotal = max(array_number)
-        
-############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
+        try:
+            if (len(array_number) == 0):
+                array_number.append(0)
+            if (float(array_montant_societe[0]) != max(array_number)):  
+                montantTotal = max(array_number)
+            else:
+                array_number.remove(max(array_number))
+                montantTotal = max(array_number)
+            
+    ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
-        # montantHt, tva = get_tva_complicated(montantTotal, array_number)
+            montantHt, tva = get_tva_complicated(montantTotal, array_number)
+        except Exception:
+            tva = 0
+            montantHt = 0
 
 
     return final_results(factureDate, numberFacture, montantTotal, tva, montantHt)

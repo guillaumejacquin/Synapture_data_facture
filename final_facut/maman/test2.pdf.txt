@@ -1,0 +1,61 @@
+facture f142
+4/1/2021
+l’alchimiste
+39 rue de paradis
+75010 paris
+france
+
+facturation
+agence blue smile
+caroline geffroy
+52 rue de la chaussée d’antin
+75009 paris
+
+tva n° : fr22_845006741
+siret : 845_006_741_00019
+livraison
+agence blue smile
+caroline geffroy
+52 rue de la chaussée d’antin
+75009 paris
+caroline@agencebluesmile.com
+
+produit
+recharge lessive liquide
+livraison
+
+prix unitaire ht
+
+quantité montant total ht
+
+3.00) €
+
+100
+
+300.00 €)
+
+30.00) €
+
+1
+
+gratuite
+
+total ht
+
+300.00 €)
+
+tva 20%
+
+60.00 €)
+
+total ttc
+
+360.00 €)
+
+paiement à réception de la facture
+coordonnées bancaires :
+
+ban : fr76_1695_8000_0121_9104_7867_314
+bic : qntofrp1xxx
+
+

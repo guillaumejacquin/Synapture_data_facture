@@ -1,0 +1,86 @@
+facture
+
+stella pardo
+
+n° fa08713
+
+2 rue jean baptiste charcot
+
+date : 01/10/19
+
+57950 montigny les mets
+
+réf : du 01/10/19 au 31/10/19
+montant ht
+
+libellé
+honoraire
+
+700.00
+
+portes ouvertes digitale du 05/09
+
+250.00
+
+détail de la tva
+code
+
+base ht
+
+c20
+
+taux
+
+950.00
+
+montant
+20%
+
+190.00
+
+950.00 €
+
+tva
+
+190.00 €
+
+total ttc
+
+règlement
+
+virement
+
+echéance
+
+le 01/10/19
+coordonées bancaires
+
+rib
+iban
+bic
+
+total ht
+
+1140.00 €
+
+acompte ttc
+
+€
+
+reste du ttc
+
+1140.00 €
+
+30076-02052-22322100200-18
+fr76-30076020522232210020018
+nordfrpp
+
+pas d'escompte pour règlement anticipé; en cas de retard de paiement. une pénalité égale à 3 fois le taux d'intérêt légal sera exigible (article l441-6.
+alinéa 12 du code du commerce).
+pour tout professionnel. en sus des indémnités de retard. toute somme. y compris l'acompte. non payé à sa date d'exigibilité produira de plein droit
+le paiement d'une indémnité forfaitaire de 40 € due au titre des frais de recouvrement (article 441-6 alinéa 12 du code du commerce et d. 441-5 ibidem).
+js presse - 62 rue tiquetonne - 75002 paris - tél : 01_42_33_58_89
+sarl au capital social de 6_000 € - siret 48374013000032
+n° tva fr07483740130
+
+

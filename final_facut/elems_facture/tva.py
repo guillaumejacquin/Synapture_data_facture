@@ -29,7 +29,24 @@ def get_tva(montantHt, compteur, tva):
 
     return(tva)
 
+def get_tva_htc(oscour, compteur, montantHt, tva_probable):
+    find = False
 
+    for i in oscour:
+                compteur = 0
+                for j in tva_probable:
+            
+                    if i == j:
+                        montantHt = i
+                        find = True
+                        break
+
+                if (find == True):
+                    break
+                compteur += 1
+    compteur = compteur % 4
+
+    return(compteur, montantHt)
 
 
 def define_tva(arrayTotalMontant2_convert, tva_probable, montantHt):
@@ -84,7 +101,6 @@ def get_tva_complicated(montantTotal, array_number):
         tva_probable = all_results_tva(tva_probable, montantTotal)
         array_number = list(dict.fromkeys(array_number))
 
-        array_number.sort()
         possible_tva = array_number[-2]
 
         array_possible_tva = [round(possible_tva -0.01, 2), round(possible_tva, 2), round(possible_tva +0.01, 2)]
