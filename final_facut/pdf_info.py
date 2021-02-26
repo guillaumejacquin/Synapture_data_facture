@@ -189,7 +189,6 @@ def get_all_data(source, text, file_given, elements):
                 montantTotal = max(array_number)
         except Exception:
             montantTotal = max(array_number)
-        print(array_montant_societe)        
 ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
         montantHt, tva = get_tva_complicated(montantTotal, array_number)

@@ -4,7 +4,11 @@ def get_facture_date(elements):
     factureDate = ""
     for i in elements:
         try:  
-            if (i[2] == "/" and i[5] == "/" and unique == True or i[2] == "-" and i[5] == "-" and unique == True):
+            if (i[2] == "/" and i[5] == "/" and unique == True or i[2] == "-" and i[5] == "-" and unique == True or i[2] == ":" and i[5] == ":"):
+                factureDate = i
+                unique = False
+
+            if (i[1] == "/" and i[4] == "/" or i[3] == "/" and unique == True or i[1] == "-" and i[4] == "-" or i[3] == "-" and unique == True or i[1] == ":" and i[4] == ":" or i[3] == ":"):
                 factureDate = i
                 unique = False
         except Exception:
