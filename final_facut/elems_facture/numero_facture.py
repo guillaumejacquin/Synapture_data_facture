@@ -44,23 +44,35 @@ def get_number_facture(elements):
     
     for i in elements:
         
-        getFirstStripNumeroFacture(i, compteurNumeroFacture, arrayNumeroFacture) #On decoupe en un premier tableau
-        
+
+        if (i == "facture" or "facture :"):
+            compteurNumeroFacture += 1     
+            test.append(i)
+          
+            if (compteurNumeroFacture >= 0):
+                compteurNumeroFacture += 1
+
+                if (compteurNumeroFacture > 2):   
+                        compteurNumeroFacture = -1
+                else: 
+                    test.append(i)
+
 
         if (parse1 < 2):
             test.append(i)
             parse1 + 1
 
         if("numero" in i):
-                        
+            test.append(i)
+            parse1 = 1
 
-                    test.append(i)
-                    parse1 = 1
         if ('°' in i):
             test.append(i)
             parse1 = 1
          #on parse le 2 nd tableau
     last_array = []
+    print(test)
+
     # print(test)
     for elem in test: 
         compteurint = 0
