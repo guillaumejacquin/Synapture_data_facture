@@ -8,7 +8,7 @@ def get_facture_date(elements):
                 factureDate = i
                 unique = False
 
-            if (i[1] == "/" and i[4] == "/" or i[3] == "/" and unique == True or i[1] == "-" and i[4] == "-" or i[3] == "-" and unique == True or i[1] == ":" and i[4] == ":" or i[3] == ":"):
+            if (i[1] == "/" and  i[3] == "/" and unique == True or i[1] == "-" and i[3] == "-" and unique == True or i[1] == ":" and  i[3] == ":"):
                 factureDate = i
                 unique = False
         except Exception:
