@@ -66,8 +66,6 @@ def create_txt_pdf(raw, file_given):
     file_txt = file_given + ".txt"
     f = open(file_txt, "w")
     txt = output.lower()
-
-
     txt = list(txt)
     for i in range(len(txt)):
         if (txt[i].isdigit() and txt[i+1] == ' 'and txt[i+2].isdigit()):
@@ -75,11 +73,7 @@ def create_txt_pdf(raw, file_given):
 
         if (txt[i] == ','):
             txt[i] = '.'
-
-
     txt = "".join(txt)
- 
-
     f.write(txt)
     f.close()
 

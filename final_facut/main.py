@@ -2,7 +2,7 @@ from pdf_info import *
 
 
 def main():
-    arg = "alaid.png"
+    arg = "synapture/test5.pdf"
     values = (parse_type_file(arg))
     
     arg_json = arg + ".json"

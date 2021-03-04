@@ -54,7 +54,7 @@ def all_results_tva(tva_probable, montantTotal):
     tva_probable.append(round((montantTotal / 1.2), 2))
     tva_probable.append(round((montantTotal / 1.1), 2))
     tva_probable.append(round((montantTotal / 1.155), 2))
-    tva_probable.append(round((montantTotal / 1.11), 2))
+    tva_probable.append(round((montantTotal / 1.179), 2))
 
     return(tva_probable)
 
