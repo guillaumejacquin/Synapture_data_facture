@@ -2,7 +2,14 @@ from pdf_info import *
 
 
 def main():
-    print(parse_type_file("maman/test17.pdf"))
+    arg = "alaid.png"
+    values = (parse_type_file(arg))
+    
+    arg_json = arg + ".json"
+    f = open(arg_json, "a")
+    f.write(str(values))
+
+    print(values)
 
 main()
 

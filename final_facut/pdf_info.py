@@ -1,4 +1,6 @@
 from imports.imports_facture import *
+import pytesseract
+
 
 start_time = time.time()
 factureDate = ""
@@ -27,14 +29,34 @@ def parse_type_file(file_given):
         
     if (file_given.endswith(".txt")):
         error = False
-        source = file_given
-
         return (create_txt_txt(file_given))
-            
+    
+    if (file_given.endswith(".png") or file_given.endswith(".jpg")):
+        error = False
+        return(create_txt_png(file_given))
+
+
     if (error == True):
         print("Il y'a une erreur, le format du fichier n'est pas le bon. \nSeuls les fichiers de type .pdf, .jpg, .jpeg ou .png sont autorisés")
         exit (84)  
 
+def create_txt_png(file_given):
+    text = pytesseract.image_to_string(file_given)
+    file_txt = file_given + ".txt"
+    f = open(file_txt, "w")
+    txt = text.lower()
+
+    txt = list(txt)
+    for i in range(len(txt)):
+        if (txt[i].isdigit() and txt[i+1] == ' 'and txt[i+2].isdigit()):
+            txt[i+1] = '_'
+        if (txt[i] == ','):
+            txt[i] = '.'
+    txt = "".join(txt)
+    f.write(txt)
+    f.close()
+
+    return (define_if_facture_or_not(txt, file_given))
 
 def create_txt_pdf(raw, file_given):
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -87,7 +109,6 @@ def define_if_facture_or_not(text, file_given):
         return (get_all_data(source, text, file_given, elements))
     else:
         return(-1)
-
 
 def get_all_data(source, text, file_given, elements):
     factureDate = ""
@@ -154,7 +175,6 @@ def get_all_data(source, text, file_given, elements):
 
                 except Exception:
                     pass
-            
 
             tva_probable = all_results_tva(tva_probable, montantTotal)
             array_final = list(dict.fromkeys(array_final))
@@ -183,6 +203,7 @@ def get_all_data(source, text, file_given, elements):
         
 
         montantTotal = max(array_number)
+
         try:
            if (float(array_montant_societe[0]) == montantTotal):
                 array_number.remove(max(array_number))
@@ -192,7 +213,6 @@ def get_all_data(source, text, file_given, elements):
 ############################################################################ TAXS AND TVA (SI C EST PLUS DIFFICILE)##############################################################
 
         montantHt, tva = get_tva_complicated(montantTotal, array_number)
-
 
     return final_results(factureDate, numberFacture, montantTotal, tva, montantHt)
 
