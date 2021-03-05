@@ -1,6 +1,9 @@
 from imports.imports_facture import *
 import pytesseract
+import ocrmypdf
+import datetime
 
+begin_time = datetime.datetime.now()
 
 start_time = time.time()
 factureDate = ""
@@ -31,7 +34,7 @@ def parse_type_file(file_given):
         error = False
         return (create_txt_txt(file_given))
     
-    if (file_given.endswith(".png") or file_given.endswith(".jpg")):
+    if (file_given.endswith(".png") or file_given.endswith(".jpg") or file_given.endswith(".jpeg")):
         error = False
         return(create_txt_png(file_given))
 
@@ -66,6 +69,15 @@ def create_txt_pdf(raw, file_given):
     file_txt = file_given + ".txt"
     f = open(file_txt, "w")
     txt = output.lower()
+
+    if (len(txt) < 50):
+        ocrmypdf.ocr(file_given, file_given, rotate_pages=True)
+        args = ["pdftotext", '-enc', 'UTF-8', file_given.format(SCRIPT_DIR), '-']
+        res = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        output = res.stdout.decode('utf-8')
+        file_txt = file_given + ".txt"
+        f = open(file_txt, "w")
+        txt = output.lower()
     txt = list(txt)
     for i in range(len(txt)):
         if (txt[i].isdigit() and txt[i+1] == ' 'and txt[i+2].isdigit()):
@@ -79,13 +91,10 @@ def create_txt_pdf(raw, file_given):
 
     return (define_if_facture_or_not(txt, file_given))
 
-
 def create_txt_txt(file_given):
     f = open(file_given, "r")
     txt = f.read()
     return (define_if_facture_or_not(txt, file_given))
-
-
 
 def define_if_facture_or_not(text, file_given):
     source = ""
@@ -213,7 +222,7 @@ def get_all_data(source, text, file_given, elements):
 
 
 
-def final_results(factureDate, numberFacture, montantTotal, tva, montantHt):
+def final_results(factureDate, numberFacture, montantTotal, tva, montantHt):   #resultats obtenus
     data = {
     "date" : factureDate,
     "numero de facture" : numberFacture,
@@ -223,3 +232,5 @@ def final_results(factureDate, numberFacture, montantTotal, tva, montantHt):
     }
 
     return data
+
+print(datetime.datetime.now() - begin_time)
